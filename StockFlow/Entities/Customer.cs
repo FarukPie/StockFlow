@@ -9,5 +9,7 @@
         public string? CustomerDistrick { get; set; }
         public decimal CustomerBalance { get; set; }
         public string? CustomerImgUrl { get; set; }
+
+        public List<Order> Orders { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StockFlow.Context;
 
@@ -11,9 +12,11 @@ using StockFlow.Context;
 namespace StockFlow.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20250611114623_mig2")]
+    partial class mig2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -104,10 +107,6 @@ namespace StockFlow.Migrations
 
                     b.HasKey("OrderID");
 
-                    b.HasIndex("CustomerID");
-
-                    b.HasIndex("ProductID");
-
                     b.ToTable("Orders");
                 });
 
@@ -139,25 +138,6 @@ namespace StockFlow.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("StockFlow.Entities.Order", b =>
-                {
-                    b.HasOne("StockFlow.Entities.Customer", "Customer")
-                        .WithMany("Orders")
-                        .HasForeignKey("CustomerID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("StockFlow.Entities.Product", "Product")
-                        .WithMany("Orders")
-                        .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("StockFlow.Entities.Product", b =>
                 {
                     b.HasOne("StockFlow.Entities.Category", "Category")
@@ -172,16 +152,6 @@ namespace StockFlow.Migrations
             modelBuilder.Entity("StockFlow.Entities.Category", b =>
                 {
                     b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("StockFlow.Entities.Customer", b =>
-                {
-                    b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("StockFlow.Entities.Product", b =>
-                {
-                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }

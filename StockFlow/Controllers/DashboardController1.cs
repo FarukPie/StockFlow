@@ -4,6 +4,7 @@ namespace StockFlow.Controllers
 {
     public class DashboardController1 : Controller
     {
+        
         public IActionResult Index()
         {
             return View();
