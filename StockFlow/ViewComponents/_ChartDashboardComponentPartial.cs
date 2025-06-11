@@ -2,11 +2,8 @@
 
 namespace StockFlow.ViewComponents
 {
-    public class _ChartDashboardComponentPartial :ViewComponent
+    public class _ChartDashBoardComponentPartial:ViewComponent
     {
-        public IViewComponentResult Invoke()
-        {
-            return View();
-        }
+        public IViewComponentResult Invoke() { return View(); }
     }
 }
