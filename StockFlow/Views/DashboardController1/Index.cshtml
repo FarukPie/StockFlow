@@ -25,8 +25,7 @@
 @await Component.InvokeAsync("_ThemeSettingWrapperDashboardComponentPartial")
 
 @await Component.InvokeAsync("_RightSidebarDashboardComponentPartial")
-            <!-- partial -->
-            <!-- partial:partials/_sidebar.html -->
+
 @await Component.InvokeAsync("_SidebarDashboardComponentPartial")
             <!-- partial -->
             <div class="main-panel">
@@ -37,34 +36,9 @@
                         </h3>
                     </div>
 
- @await Component.InvokeAsync("_CardStatisticDashboradComponent")
-                   
-                    <div class="row">
-                        <div class="col-md-6 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <i class="fas fa-gift"></i>
-                                        Orders
-                                    </h4>
-                                    <canvas id="orders-chart"></canvas>
-                                    <div id="orders-chart-legend" class="orders-chart-legend"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <i class="fas fa-chart-line"></i>
-                                        Sales
-                                    </h4>
-                                    <h2 class="mb-5">56000 <span class="text-muted h4 font-weight-normal">Sales</span></h2>
-                                    <canvas id="sales-chart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+@await Component.InvokeAsync("_CardStatisticDashboradComponent")
+
+@await Component.InvokeAsync("_ChartDashboardComponentPartial")
                     <div class="row">
                         <div class="col-md-4 grid-margin stretch-card">
                             <div class="card">

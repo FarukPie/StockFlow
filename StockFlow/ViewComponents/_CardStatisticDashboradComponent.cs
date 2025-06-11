@@ -19,6 +19,8 @@ namespace StockFlow.ViewComponents
             ViewBag.TotalProductCount= _storeContext.Products.Count();
             ViewBag.TotalCategoryCount= _storeContext.Categories.Count();
             ViewBag.AvgCustomerBalance= _storeContext.Customers.Average(c => c.CustomerBalance).ToString("N1");
+            ViewBag.TotalOrderCount= _storeContext.Orders.Count();
+            ViewBag.SumOrderProductCount = _storeContext.Orders.Sum(x => x.OrderCount);
             return View();
         }
     }
