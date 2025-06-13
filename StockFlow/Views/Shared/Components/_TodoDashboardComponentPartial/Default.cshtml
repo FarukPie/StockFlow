@@ -1,0 +1,109 @@
+﻿@model List<Todo>
+<div class="row">
+    <div class="col-md-7 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <i class="fas fa-thumbtack"></i>
+                    Todo
+                </h4>
+                <div class="add-items d-flex">
+                    <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?">
+                    <button class="add btn btn-primary font-weight-bold todo-list-add-btn" id="add-task">Add</button>
+                </div>
+                <div class="list-wrapper">
+                    <ul class="d-flex flex-column-reverse todo-list">
+                        @foreach(var item in Model)
+                        {  
+                            <li>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="checkbox" type="checkbox">
+                                   @item.Description
+                                </label>
+                            </div>
+                            <i class="remove fa fa-times-circle"></i>
+                        </li>
+
+                            
+                        }
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <i class="fas fa-rocket"></i>
+                    Projects
+                </h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Assigned to
+                                </th>
+                                <th>
+                                    Project name
+                                </th>
+                                <th>
+                                    Priority
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-1">
+                                    <img src="images/faces/face1.jpg" alt="profile" class="img-sm rounded-circle" />
+                                </td>
+                                <td>
+                                    South Shyanne
+                                </td>
+                                <td>
+                                    <label class="badge badge-warning badge-pill">Medium</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-1">
+                                    <img src="images/faces/face2.jpg" alt="profile" class="img-sm rounded-circle" />
+                                </td>
+                                <td>
+                                    New Trystan
+                                </td>
+                                <td>
+                                    <label class="badge badge-danger badge-pill">High</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-1">
+                                    <img src="images/faces/face3.jpg" alt="profile" class="img-sm rounded-circle" />
+                                </td>
+                                <td>
+                                    East Helga
+                                </td>
+                                <td>
+                                    <label class="badge badge-success badge-pill">Low</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-1">
+                                    <img src="images/faces/face4.jpg" alt="profile" class="img-sm rounded-circle" />
+                                </td>
+                                <td>
+                                    Omerbury
+                                </td>
+                                <td>
+                                    <label class="badge badge-warning badge-pill">Medium</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
