@@ -6,7 +6,7 @@
 
 
 @await Component.InvokeAsync("_HeadDashBoardComponentPartial")
-
+    
 <body>
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
@@ -19,12 +19,16 @@
         <div class="container-fluid page-body-wrapper">
 
 @await Component.InvokeAsync("_ThemeSettingWrapperDashboardComponentPartial")
+<div class="row">
 @await Component.InvokeAsync("_RightSidebarDashboardComponentPartial")
 @await Component.InvokeAsync("_SidebarDashboardComponentPartial")
+</div>
 
-            <div class="main-panel">
-                <div class="content-wrapper">
-                    <div class="page-header">
+
+
+<div class="main-panel">
+<div class="content-wrapper">
+<div class="page-header">
                         <h3 class="page-title">
                             Dashboard
                         </h3>
@@ -39,8 +43,8 @@
 @await Component.InvokeAsync("_DailySaleDashboardComponentPartial")
 
                     </div>
-                   @* inbox begin *@
-                    <div class="row">
+
+<div class="row">
                         <div class="col-12 grid-margin">
                             <div class="card">
                                 <div class="card-body">
@@ -178,12 +182,14 @@
                             </div>
                         </div>
                     </div>
-				   @* inbox end *@
+
 @await Component.InvokeAsync("_SaleDataDashboardComponentPartial")
+<div class="row">
 @await Component.InvokeAsync("_TodoDashboardComponentPartial")
+@await Component.InvokeAsync("_ProjectDashboardComponentPartial")
+</div>
 
-
-                    <div class="row">
+<div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
@@ -229,7 +235,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+</div>
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
