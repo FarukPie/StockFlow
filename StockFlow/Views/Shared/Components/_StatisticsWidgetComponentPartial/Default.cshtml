@@ -1,5 +1,6 @@
 ﻿<div class="main-panel">
     <div class="content-wrapper">
+
         <div class="row">
             <div class="col-md-4 grid-margin">
                 <div class="card">
@@ -58,13 +59,78 @@
                                 <small class="text-gray">Lowest product is @ViewBag.ProductMinPriceProduct</small>
                             </div>
                             <div class="d-inline-block">
-                                <i class="fas fa-bell text-danger icon-lg"></i>
+                                <i class="fas fa-bell text-warning icon-lg"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-4 grid-margin">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-0">Products</h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-inline-block pt-3">
+                                <div class="d-md-flex">
+                                    <h2 class="mb-0">@ViewBag.totalSumProductStock</h2>
+                                </div>
+                                <small class="text-gray">There are @ViewBag.totalSumProductStock product in total</small>
+                            </div>
+                            <div class="d-inline-block">
+                                <i class="fas fa-archive text-info icon-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 grid-margin">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-0">Average product stock</h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-inline-block pt-3">
+                                <div class="d-md-flex">
+                                    <h2 class="mb-0">
+                                        @ViewBag.averageProductStock
+                                    </h2>
+                                </div>
+                                <small class="text-gray">Highest product is </small>
+                            </div>
+                            <div class="d-inline-block">
+                                <i class="fas fa-database text-primary icon-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 grid-margin">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-0">Average Product Price</h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-inline-block pt-3">
+                                <div class="d-md-flex">
+                                    <h2 class="mb-0">
+                                        <span>@String.Format("{0:N2}", ViewBag.averageProductPrice)</span>
+
+                                        <span style="font-family: 'Segoe UI', 'Arial', 'sans-serif';">₺</span>
+                                    </h2>
+
+                                </div>
+                                <small class="text-gray">Average product price is @ViewBag.averageProductPrice</small>
+                            </div>
+                            <div class="d-inline-block">
+                                <i class="fas fa-bullhorn text-warning icon-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 
     </div>

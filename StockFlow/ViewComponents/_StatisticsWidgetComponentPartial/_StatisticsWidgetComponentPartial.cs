@@ -17,8 +17,13 @@ namespace StockFlow.ViewComponents._StatisticsViewComponent
             ViewBag.CategoryCount= _context.Categories.Count();
             ViewBag.ProductMaxPrice = _context.Products.Max(x => x.ProductPrice);
             ViewBag.ProductMinPrice = _context.Products.Min(x => x.ProductPrice);
+
             ViewBag.ProductMaxPriceProduct=_context.Products.Where(x=>x.ProductPrice==(_context.Products.Max(x=>x.ProductPrice))).Select(x=>x.ProductName).FirstOrDefault();
             ViewBag.ProductMinPriceProduct=_context.Products.Where(x=>x.ProductPrice==(_context.Products.Min(x=>x.ProductPrice))).Select(x=>x.ProductName).FirstOrDefault();
+
+            ViewBag.totalSumProductStock=_context.Products.Sum(x => x.ProductStock);
+            ViewBag.averageProductStock=_context.Products.Average(x => x.ProductStock);
+            ViewBag.averageProductPrice=_context.Products.Average(x => x.ProductPrice);
             return View();
         }
     }
