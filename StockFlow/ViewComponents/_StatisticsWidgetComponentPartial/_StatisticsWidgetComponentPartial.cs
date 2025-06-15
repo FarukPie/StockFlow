@@ -24,6 +24,10 @@ namespace StockFlow.ViewComponents._StatisticsViewComponent
             ViewBag.totalSumProductStock=_context.Products.Sum(x => x.ProductStock);
             ViewBag.averageProductStock=_context.Products.Average(x => x.ProductStock);
             ViewBag.averageProductPrice=_context.Products.Average(x => x.ProductPrice);
+
+            ViewBag.biggerPriceThen1000ProductCount = _context.Products.Where(x => x.ProductPrice > 1000).Count();
+            ViewBag.getIDIs4ProductName = _context.Products.Where(x => x.ProductID == 4).Select(y => y.ProductName).FirstOrDefault();
+            ViewBag.stockCountBigger50AndSmaller100ProductCount = _context.Products.Where(x => x.ProductStock > 50 && x.ProductStock < 100).Count();
             return View();
         }
     }
