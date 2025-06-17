@@ -1,19 +1,53 @@
-﻿
+﻿@model List<Category>
 @{
     ViewData["Title"] = "CategoryList";
     Layout = "~/Views/LayoutController1/Index.cshtml";
 }
 
-<div class="main-panel">
-    <div class="content-wrapper">
+<div class="row">
 
-<h1>CategoryList</h1>
-</div>
-
-        <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2018 <a href="https://www.urbanui.com/" target="_blank">Urbanui</a>. All rights reserved.</span>
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="far fa-heart text-danger"></i></span>
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Category List</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Profile</th>
+                                <th>VatNo.</th>
+                                <th>Created</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                @foreach(var item in Model)
+{
+                                <tr>
+                                    <td>@item.CategoryID</td>
+                                    <td>@item.CategoryName</td>
+                                    @if(item.CategoryStatus==true)
+                                    {
+                                        <td><label class="badge badge-success badge-pill">Active</label></td>
+                                    }
+                                    else
+                                    {
+                                        <td><label class="badge badge-danger badge-pill">Inactive</label></td>
+									}
+                                    <td>@item.</td>
+                                    <td><a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-outline-danger">Delete</a></td>
+                                    <td><a href="/Category/UpdateCategory/@item.CategoryID" class="btn btn-outline-success">Update</a></td>
+                                </tr>
+                                    
+                                }
+                                
+                        </tbody>
+                    </table>
+                    <br><br />
+                    <a href="/Category/CreateCategory" class="btn btn-outline-primary">Add New Category</a>
+                </div>
             </div>
-        </footer>
         </div>
+    </div>
+</div>
